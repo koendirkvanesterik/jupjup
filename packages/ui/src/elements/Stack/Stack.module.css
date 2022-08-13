@@ -1,0 +1,61 @@
+.stack {
+  @apply flex;
+
+  &--column-none,
+  &--column-small,
+  &--column-medium,
+  &--column-large {
+    @apply flex-col;
+  }
+
+  &--column-small {
+    > :not(*:nth-child(1)) {
+      @apply mt-2;
+    }
+  }
+
+  &--column-medium {
+    > :not(*:nth-child(1)) {
+      @apply mt-6;
+    }
+  }
+
+  &--column-large {
+    > :not(*:nth-child(1)) {
+      @apply mt-12;
+    }
+  }
+
+  &--row-none,
+  &--row-small,
+  &--row-medium,
+  &--row-large {
+    @apply flex-row;
+  }
+
+  &--row-small {
+    > :not(*:nth-child(1)) {
+      @apply ml-2;
+    }
+  }
+
+  &--row-medium {
+    > :not(*:nth-child(1)) {
+      @apply ml-6;
+    }
+  }
+
+  &--row-large {
+    > :not(*:nth-child(1)) {
+      @apply ml-12;
+    }
+  }
+
+  &--flex-start {
+    @apply justify-start;
+  }
+
+  &--space-between {
+    @apply justify-between;
+  }
+}

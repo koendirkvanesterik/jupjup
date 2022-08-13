@@ -1,0 +1,27 @@
+.menu {
+  @apply flex flex-col;
+
+  &__item {
+    @apply relative;
+    @apply flex flex-col flex-wrap items-stretch gap-3;
+    @apply px-4 py-3;
+    @apply text-current;
+
+    &:focus,
+    &:hover {
+      @apply bg-slate-900 bg-opacity-10;
+    }
+
+    &:active {
+      @apply text-white;
+      @apply bg-opacity-100;
+    }
+
+    &--active,
+    &--active:hover,
+    &--active:focus {
+      @apply text-white;
+      @apply bg-slate-900;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+.login-view {
+  @apply grid place-items-center;
+  @apply h-screen;
+
+  &__container {
+    @apply w-full max-w-sm;
+  }
+}

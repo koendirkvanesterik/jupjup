@@ -1,26 +1,24 @@
 {
-  "name": "web",
+  "name": "@jj/web",
   "version": "0.0.0",
   "private": true,
+  "dependencies": {
+    "@jj/ui": "workspace:*",
+    "next": "12.2.5",
+    "next-i18next": "^11.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@jj/config": "workspace:*",
+    "@jj/tsconfig": "workspace:*",
+    "next-transpile-modules": "9.0.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "next": "12.0.8",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "ui": "workspace:*"
-  },
-  "devDependencies": {
-    "config": "workspace:*",
-    "eslint": "7.32.0",
-    "next-transpile-modules": "9.0.0",
-    "tsconfig": "workspace:*",
-    "@types/node": "^17.0.12",
-    "@types/react": "17.0.37",
-    "typescript": "^4.5.3"
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit"
   }
 }

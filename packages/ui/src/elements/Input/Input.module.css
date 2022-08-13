@@ -1,0 +1,13 @@
+.input {
+  @apply px-3; /* Spacing */
+  @apply h-10 w-full; /* Sizing */
+  @apply text-sm leading-loose; /* Typography */
+  @apply bg-slate-800 bg-opacity-5; /* Background */
+  @apply rounded-md border border-slate-800 border-opacity-0; /* Border */
+  @apply transition duration-200 ease-in-out; /* Transitions & Animation */
+
+  &:focus {
+    @apply bg-white;
+    @apply outline outline-2 outline-slate-900;
+  }
+}

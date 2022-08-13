@@ -1,0 +1,12 @@
+schema: ./src/schema.graphql
+generates:
+  ./src/generated/types.ts:
+    config:
+      inputMaybeValue: T | undefined
+      mapperTypeSuffix: Model
+      mappers:
+        User: './client/index.d#User'
+      useIndexSignature: true
+    plugins:
+      - typescript
+      - typescript-resolvers

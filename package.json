@@ -1,24 +1,47 @@
 {
-  "name": "turborepo-basic-shared",
+  "name": "jupjup",
   "version": "0.0.0",
   "private": true,
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
+  "engines": {
+    "npm": ">=7.19.1",
+    "node": ">=16.5.0"
+  },
+  "packageManager": "pnpm@6.26.1",
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@types/jest": "^28.1.6",
+    "autoprefixer": "^10.4.7",
+    "eslint": "8.21.0",
+    "eslint-config-next": "^12.0.8",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-react": "7.30.1",
+    "husky": "^8.0.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^28.1.0",
+    "jest-environment-jsdom": "^28.1.0",
+    "postcss": "^8.4.14",
+    "postcss-loader": "^7.0.1",
+    "prettier": "^2.6.2",
+    "prettier-plugin-tailwindcss": "^0.1.11",
+    "tailwindcss": "^3.0.24",
+    "ts-jest": "^28.0.2",
+    "turbo": "latest",
+    "typescript": "^4.6.4",
+    "typescript-plugin-css-modules": "^3.4.0",
+    "webpack": "^5.72.1"
+  },
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "prepare": "husky install",
+    "test": "turbo run test",
+    "typecheck": "turbo run typecheck"
   },
-  "devDependencies": {
-    "prettier": "latest",
-    "turbo": "latest"
-  },
-  "engines": {
-    "npm": ">=7.0.0",
-    "node": ">=14.0.0"
-  },
-  "packageManager": "pnpm@6.32.9"
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
 }

@@ -1,0 +1,9 @@
+.text {
+  &--small {
+    @apply text-sm;
+  }
+  &--medium {
+  }
+  &--large {
+  }
+}

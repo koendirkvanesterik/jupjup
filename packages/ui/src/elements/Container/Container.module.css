@@ -1,0 +1,14 @@
+.container {
+  @apply mx-auto;
+  @apply px-2;
+
+  &--small {
+    @apply max-w-sm;
+  }
+  &--medium {
+    @apply max-w-2xl;
+  }
+  &--large {
+    @apply max-w-5xl;
+  }
+}

@@ -1,0 +1,22 @@
+.form-control {
+  @apply flex flex-col;
+
+  &__label,
+  &__hint {
+    @apply flex items-center justify-between;
+    @apply px-1 py-2;
+    @apply select-none;
+  }
+
+  &__label {
+    @apply text-sm;
+  }
+
+  &__hint {
+    @apply text-xs;
+
+    &--error {
+      @apply text-red-500;
+    }
+  }
+}

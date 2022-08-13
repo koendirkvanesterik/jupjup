@@ -3,9 +3,22 @@
   "display": "React Library",
   "extends": "./base.json",
   "compilerOptions": {
-    "lib": ["ES2015"],
+    "declaration": true,
+    "declarationMap": true,
+    "jsx": "react-jsx",
+    "lib": ["DOM", "ES2015"],
     "module": "ESNext",
-    "target": "ES6",
-    "jsx": "react-jsx"
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules",
+        "options": {
+          "postcssOptions": {
+            "useConfig": true
+          }
+        }
+      }
+    ],
+    "resolveJsonModule": true,
+    "target": "ES6"
   }
 }
