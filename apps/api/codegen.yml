@@ -1,10 +1,11 @@
-schema: ./src/schema.graphql
+schema: ./src/schemas/*.graphql
 generates:
   ./src/generated/types.ts:
     config:
       inputMaybeValue: T | undefined
       mapperTypeSuffix: Model
       mappers:
+        Role: './client/index.d#Role'
         User: './client/index.d#User'
       useIndexSignature: true
     plugins:

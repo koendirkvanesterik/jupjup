@@ -1,6 +1,5 @@
 import { verify } from 'jsonwebtoken'
-
-export const APP_SECRET = '71d9fc91f10c4503a35d98930e67be4b'
+import { APP_SECRET } from '../config'
 
 export const getUserId = (req: any, authToken?: string) => {
   if (req) {

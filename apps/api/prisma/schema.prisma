@@ -8,19 +8,39 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model Link {
-  createdAt   DateTime @default(now())
-  description String
-  id          Int      @id @default(autoincrement())
-  postedBy    User?    @relation(fields: [postedById], references: [id])
-  postedById  Int?
-  url         String
+model User {
+  id        String    @id @default(cuid())
+  name      String
+  email     String    @unique
+  password  String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime? @updatedAt
+  role      Role      @relation(fields: [roleId], references: [id])
+  roleId    String
 }
 
-model User {
-  email    String @unique
-  id       Int    @id @default(autoincrement())
-  links    Link[]
-  name     String
-  password String
+model Role {
+  id          String       @id @default(cuid())
+  name        String       @unique
+  users       User[]
+  permissions Permission[]
+}
+
+model Resource {
+  id          String       @id @default(cuid())
+  name        String
+  permissions Permission[]
+}
+
+model Permission {
+  create     Boolean  @default(false)
+  read       Boolean  @default(false)
+  update     Boolean  @default(false)
+  delete     Boolean  @default(false)
+  resource   Resource @relation(fields: [resourceId], references: [id])
+  resourceId String
+  role       Role     @relation(fields: [roleId], references: [id])
+  roleId     String
+
+  @@id([resourceId, roleId])
 }
