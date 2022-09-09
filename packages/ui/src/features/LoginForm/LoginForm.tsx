@@ -52,8 +52,8 @@ export const LoginForm = () => {
             <Link href="/account/forgot-password/">
               <Text size="small">{t('forgot-password')}</Text>
             </Link>
-            <Link href="/account/sign-up/">
-              <Text size="small">{t('sign-up')}</Text>
+            <Link href="/account/register/">
+              <Text size="small">{t('register')}</Text>
             </Link>
           </Stack>
         </Stack>
