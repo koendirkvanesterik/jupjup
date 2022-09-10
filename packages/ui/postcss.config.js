@@ -1,1 +1,1 @@
-module.exports = require('@jj/config/postcss.config')
+module.exports = require('@jupjup/config/postcss.config')

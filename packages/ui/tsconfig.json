@@ -1,5 +1,5 @@
 {
-  "extends": "@jj/config/tsconfig/react-library.json",
+  "extends": "@jupjup/config/tsconfig/react-library.json",
   "exclude": ["node_modules"],
   "include": ["src"]
 }

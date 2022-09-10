@@ -1,5 +1,5 @@
 {
-  "extends": "@jj/config/tsconfig/base.json",
+  "extends": "@jupjup/config/tsconfig/base.json",
   "compilerOptions": {
     "noImplicitAny": false
   },
