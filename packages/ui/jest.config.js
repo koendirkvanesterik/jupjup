@@ -1,1 +1,1 @@
-module.exports = require('@jj/config/jest.config')
+module.exports = require('@jupjup/config/jest.config')

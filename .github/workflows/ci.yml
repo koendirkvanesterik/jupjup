@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  push:
+    branches: ['main']
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Lint/Test/Build
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: '7'
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - uses: actions/cache@v2
+        with:
+          path: .turbo-cache
+          key: ${{ runner.os }}-turbo-cache
+      - name: Lint
+        run: pnpm turbo run lint --cache-dir="./.turbo-cache"
+      - name: Test
+        run: pnpm turbo run test --cache-dir="./.turbo-cache"
+      - name: Build
+        run: pnpm turbo run build --cache-dir="./.turbo-cache"

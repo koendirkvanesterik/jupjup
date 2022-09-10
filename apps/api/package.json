@@ -1,5 +1,5 @@
 {
-  "name": "@jj/api",
+  "name": "@jupjup/api",
   "version": "0.0.0",
   "private": true,
   "dependencies": {
@@ -16,7 +16,7 @@
     "@graphql-codegen/cli": "^2.6.2",
     "@graphql-codegen/typescript": "^2.5.0",
     "@graphql-codegen/typescript-resolvers": "^2.6.5",
-    "@jj/config": "workspace:*",
+    "@jupjup/config": "workspace:*",
     "@types/bcryptjs": "^2.4.2",
     "@types/jsonwebtoken": "^8.5.9",
     "@types/node": "^17.0.12",

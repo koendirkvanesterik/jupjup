@@ -1,1 +1,1 @@
-module.exports = require('@jj/config/eslint-preset')
+module.exports = require('@jupjup/config/eslint.config')
