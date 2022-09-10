@@ -3,6 +3,10 @@ import { sign } from 'jsonwebtoken'
 import { APP_SECRET } from '../config'
 import { MutationResolvers } from '../generated/types'
 
+/**
+ * Mutations
+ */
+
 const createUser: MutationResolvers['createUser'] = async (
   _parent,
   args,
@@ -45,9 +49,14 @@ const loginUser: MutationResolvers['loginUser'] = async (
   }
 }
 
-export default {
+/**
+ * Resolvers object
+ */
+const resolvers = {
   Mutation: {
     createUser,
     loginUser,
   },
 }
+
+export default resolvers

@@ -5,16 +5,17 @@ import { join } from 'path'
 import { PrismaClient } from './generated/client'
 import { getUserId } from './utils/getUserId'
 
-const context = ({ req }: { req: any }) => ({
-  ...req,
-  prisma: new PrismaClient(),
-  userId: req.headers.authorization ? getUserId(req) : null,
-})
 const resolvers = loadFilesSync(join(__dirname, './resolvers'))
 const typeDefs = loadFilesSync(join(__dirname, './schema'))
 
 const server = new ApolloServer({
-  context,
+  context: ({ req }) => ({
+    ...req,
+    prisma: new PrismaClient(),
+    userId: req.headers.authorization
+      ? getUserId(req.headers.authorization)
+      : null,
+  }),
   resolvers: mergeResolvers(resolvers),
   typeDefs: mergeTypeDefs(typeDefs),
 })

@@ -6,6 +6,7 @@ module.exports = {
   moduleNameMapper: {
     '\\.css$': 'identity-obj-proxy',
   },
+  setupFiles: ['dotenv/config'],
   setupFilesAfterEnv: ['@testing-library/jest-dom'],
   testEnvironment: 'jsdom',
   transform: {
