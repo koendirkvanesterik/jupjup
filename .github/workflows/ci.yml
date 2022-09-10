@@ -27,8 +27,8 @@ jobs:
           path: .turbo-cache
           key: ${{ runner.os }}-turbo-cache
       - name: Lint
-        run: pnpm lint --cache-dir="./.turbo-cache"
+        run: pnpm turbo run lint --cache-dir="./.turbo-cache"
       - name: Test
-        run: pnpm test --cache-dir="./.turbo-cache"
+        run: pnpm turbo run test --cache-dir="./.turbo-cache"
       - name: Build
-        run: pnpm build --cache-dir="./.turbo-cache"
+        run: pnpm turbo run build --cache-dir="./.turbo-cache"
