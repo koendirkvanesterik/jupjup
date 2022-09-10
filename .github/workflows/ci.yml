@@ -29,6 +29,8 @@ jobs:
       - name: Lint
         run: pnpm turbo run lint --cache-dir="./.turbo-cache"
       - name: Test
-        run: pnpm turbo run test --cache-dir="./.turbo-cache"
+        run: |
+          echo APP_SECRET=${{ secrets.APP_SECRET }} >> ./apps/api/.env
+          pnpm turbo run test --cache-dir="./.turbo-cache"
       - name: Build
         run: pnpm turbo run build --cache-dir="./.turbo-cache"
