@@ -1,5 +1,9 @@
 import { MutationResolvers, QueryResolvers } from '../generated/types'
 
+/**
+ * Mutations
+ */
+
 const createRole: MutationResolvers['createRole'] = async (
   _parent,
   args,
@@ -31,17 +35,25 @@ const updateRole: MutationResolvers['updateRole'] = async (
     },
   })
 
-const role: QueryResolvers['getRole'] = async (_parent, args, context) =>
+/**
+ * Queries
+ */
+
+const role: QueryResolvers['role'] = async (_parent, args, context) =>
   context.prisma.role.findUnique({
     where: {
       id: args.id,
     },
   })
 
-const roles: QueryResolvers['getRoles'] = async (_parent, _args, context) =>
+const roles: QueryResolvers['roles'] = async (_parent, _args, context) =>
   context.prisma.role.findMany()
 
-export default {
+/**
+ * Resolvers object
+ */
+
+const resolvers = {
   Mutation: {
     createRole,
     deleteRole,
@@ -52,3 +64,5 @@ export default {
     roles,
   },
 }
+
+export default resolvers

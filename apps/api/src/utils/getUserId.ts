@@ -1,28 +1,15 @@
 import { verify } from 'jsonwebtoken'
 import { APP_SECRET } from '../config'
 
-export const getUserId = (req: any, authToken?: string) => {
-  if (req) {
-    const authHeader = req.headers.authorization
+export const getUserId = (authorization: string): string => {
+  const token = authorization.replace('Bearer ', '')
 
-    if (authHeader) {
-      const token = authHeader.replace('Bearer ', '')
-
-      if (!token) {
-        throw new Error('No token found')
-      }
-
-      return getTokenPayload(token).userId
-    }
-  } else if (authToken) {
-    return getTokenPayload(authToken).userId
+  if (!token) {
+    throw new Error('No token found')
   }
 
-  throw new Error('Not authenticated')
-}
+  const decodedToken = verify(token, APP_SECRET)
+  const payload = typeof decodedToken === 'object' ? decodedToken : {}
 
-const getTokenPayload = (token: string) => {
-  const payload = verify(token, APP_SECRET)
-
-  return typeof payload === 'object' ? payload : {}
+  return payload.userId
 }
