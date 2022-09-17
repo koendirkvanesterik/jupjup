@@ -1,1 +1,1 @@
-module.exports = require('@jupjup/config/tailwind.config')
+module.exports = require('tailwind-config/tailwind.config')
