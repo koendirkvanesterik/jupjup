@@ -1,1 +1,7 @@
-module.exports = require('@jupjup/config/postcss.config')
+module.exports = {
+  plugins: {
+    'tailwindcss/nesting': {},
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+}

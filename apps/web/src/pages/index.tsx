@@ -1,5 +1,5 @@
-import { LoginView } from '@jupjup/ui'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { LoginView } from 'ui'
 
 const Web = () => <LoginView />
 

@@ -1,19 +1,27 @@
 {
-  "name": "@jupjup/web",
+  "name": "web",
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "@jupjup/ui": "workspace:*",
     "next": "12.3.0",
     "next-i18next": "^12.0.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "ui": "workspace:*"
   },
   "devDependencies": {
-    "@jupjup/config": "workspace:*",
     "@types/react": "^18.0.18",
     "@types/react-dom": "^18.0.6",
-    "next-transpile-modules": "9.0.0"
+    "autoprefixer": "^10.4.11",
+    "eslint": "^8.23.1",
+    "eslint-config-custom": "workspace:*",
+    "eslint-config-next": "^12.3.0",
+    "next-transpile-modules": "9.0.0",
+    "postcss": "^8.4.16",
+    "tailwind-config": "workspace:*",
+    "tailwindcss": "^3.1.8",
+    "tsconfig": "workspace:*",
+    "typescript": "^4.6.4"
   },
   "scripts": {
     "dev": "next dev",
