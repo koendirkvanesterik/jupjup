@@ -7,19 +7,19 @@ it('should render as expected', () => {
 })
 
 it.each([
-  ['error' as ButtonColor, 'button button--error'],
-  ['info' as ButtonColor, 'button button--info'],
-  ['success' as ButtonColor, 'button button--success'],
-  ['warn' as ButtonColor, 'button button--warn'],
-])('should render with class name `button button--%s`', (input, expected) => {
+  ['error' as ButtonColor, 'button--error'],
+  ['info' as ButtonColor, 'button--info'],
+  ['success' as ButtonColor, 'button--success'],
+  ['warn' as ButtonColor, 'button--warn'],
+])('should render with class name `button--%s`', (input, expected) => {
   const { getByRole } = render(<Button color={input} />)
   expect(getByRole('button')).toHaveClass(expected)
 })
 
 it.each([
-  ['ghost' as ButtonVariant, 'button button--ghost'],
-  ['outline' as ButtonVariant, 'button button--outline'],
-])('should render with class name `button button--%s`', (input, expected) => {
+  ['ghost' as ButtonVariant, 'button--ghost'],
+  ['outline' as ButtonVariant, 'button--outline'],
+])('should render with class name `button--%s`', (input, expected) => {
   const { getByRole } = render(<Button variant={input} />)
   expect(getByRole('button')).toHaveClass(expected)
 })

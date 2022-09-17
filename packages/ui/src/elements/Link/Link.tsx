@@ -1,16 +1,26 @@
+import classNames from 'classnames'
 import NextLink from 'next/link'
 import { PropsWithChildren } from 'react'
 import styles from './Link.module.css'
 
-type Props = PropsWithChildren<{ href: string }>
+export type LinkVariant = 'underline'
 
-export const Link = ({ children, href }: Props) =>
+type Props = PropsWithChildren<{ href: string; variant?: LinkVariant }>
+
+export const Link = ({ children, href, variant }: Props) =>
   /^https?:/.test(href) ? (
-    <a className={styles.link} href={href} rel="noreferrer" target="_blank">
+    <a
+      className={classNames(variant && styles[`link--${variant}`])}
+      href={href}
+      rel="noreferrer"
+      target="_blank"
+    >
       {children}
     </a>
   ) : (
     <NextLink href={href} passHref>
-      <a className={styles.link}>{children}</a>
+      <a className={classNames(variant && styles[`link--${variant}`])}>
+        {children}
+      </a>
     </NextLink>
   )

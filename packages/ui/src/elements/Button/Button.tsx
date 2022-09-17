@@ -3,7 +3,6 @@ import { ButtonHTMLAttributes, PropsWithChildren } from 'react'
 import styles from './Button.module.css'
 
 export type ButtonColor = 'error' | 'info' | 'success' | 'warn'
-
 export type ButtonVariant = 'block' | 'ghost' | 'outline'
 
 type Props = PropsWithChildren<

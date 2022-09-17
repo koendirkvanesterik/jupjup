@@ -1,9 +1,12 @@
 import { createElement, PropsWithChildren } from 'react'
 import styles from './Text.module.css'
 
+export type TextComponent = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p' | 'span'
+export type TextSize = 'small' | 'medium' | 'large'
+
 type Props = PropsWithChildren<{
-  component?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p' | 'span'
-  size?: 'small' | 'medium' | 'large'
+  component?: TextComponent
+  size?: TextSize
 }>
 
 export const Text = ({

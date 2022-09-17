@@ -7,7 +7,45 @@ exports[`should render as expected 1`] = `
   >
     <div
       class="card__body"
-    />
+    >
+      Card
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should render with actions as expected 1`] = `
+<div>
+  <div
+    class="card"
+  >
+    <div
+      class="card__body"
+    >
+      <div
+        class="card__actions"
+      >
+        Actions
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should render with title as expected 1`] = `
+<div>
+  <div
+    class="card"
+  >
+    <div
+      class="card__body"
+    >
+      <div
+        class="card__title"
+      >
+        Title
+      </div>
+    </div>
   </div>
 </div>
 `;
