@@ -4,6 +4,50 @@ exports[`should render as expected 1`] = `
 <div>
   <div
     class="form-control"
-  />
+  >
+    FormControl
+  </div>
+</div>
+`;
+
+exports[`should render with error hint as expected 1`] = `
+<div>
+  <div
+    class="form-control"
+  >
+    <div
+      class="form-control__hint form-control__hint--error"
+    >
+      Error
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should render with hint as expected 1`] = `
+<div>
+  <div
+    class="form-control"
+  >
+    <div
+      class="form-control__hint"
+    >
+      Hint
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should render with label as expected 1`] = `
+<div>
+  <div
+    class="form-control"
+  >
+    <div
+      class="form-control__label"
+    >
+      Label
+    </div>
+  </div>
 </div>
 `;

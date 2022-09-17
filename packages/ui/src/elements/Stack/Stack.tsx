@@ -2,16 +2,20 @@ import classNames from 'classnames'
 import { PropsWithChildren } from 'react'
 import styles from './Stack.module.css'
 
+export type StackAlignment = 'flex-start' | 'space-between'
+export type StackDirection = 'column' | 'row'
+export type StackSpacing = 'none' | 'small' | 'medium' | 'large'
+
 type Props = PropsWithChildren<{
-  direction?: 'column' | 'row'
-  justify?: 'flex-start' | 'space-between'
-  spacing?: 'none' | 'small' | 'medium' | 'large'
+  alignment?: StackAlignment
+  direction?: StackDirection
+  spacing?: StackSpacing
 }>
 
 export const Stack = ({
   children,
   direction = 'column',
-  justify = 'flex-start',
+  alignment: justify = 'flex-start',
   spacing = 'none',
 }: Props) => (
   <div

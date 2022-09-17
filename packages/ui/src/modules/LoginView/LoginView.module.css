@@ -1,6 +1,7 @@
 .login-view {
   @apply grid place-items-center;
   @apply h-screen;
+  @apply bg-slate-50;
 
   &__container {
     @apply w-full max-w-sm;

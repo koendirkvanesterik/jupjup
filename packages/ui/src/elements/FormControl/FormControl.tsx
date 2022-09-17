@@ -3,12 +3,12 @@ import { PropsWithChildren, ReactNode } from 'react'
 import styles from './FormControl.module.css'
 
 type Props = PropsWithChildren<{
-  error?: boolean
+  isError?: boolean
   hint?: ReactNode | string
   label?: ReactNode | string
 }>
 
-export const FormControl = ({ children, error, hint, label }: Props) => (
+export const FormControl = ({ children, isError, hint, label }: Props) => (
   <div className={styles['form-control']}>
     {label && <div className={styles['form-control__label']}>{label}</div>}
     {children}
@@ -16,7 +16,7 @@ export const FormControl = ({ children, error, hint, label }: Props) => (
       <div
         className={classNames(
           styles['form-control__hint'],
-          error && styles['form-control__hint--error'],
+          isError && styles['form-control__hint--error'],
         )}
       >
         {hint}

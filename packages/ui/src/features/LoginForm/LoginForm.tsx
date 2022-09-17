@@ -26,7 +26,7 @@ export const LoginForm = () => {
               {({ field, meta }: FieldProps) => (
                 <FormControl
                   hint={meta.touched && meta.error}
-                  error={!!meta.error}
+                  isError={!!meta.error}
                   label={t('email')}
                 >
                   <Input {...field} />
@@ -37,7 +37,7 @@ export const LoginForm = () => {
               {({ field, meta }: FieldProps) => (
                 <FormControl
                   hint={meta.touched && meta.error}
-                  error={!!meta.error}
+                  isError={!!meta.error}
                   label={t('password')}
                 >
                   <Input {...field} type="password" />
@@ -48,11 +48,11 @@ export const LoginForm = () => {
           <Button type="submit" variant="block">
             {t('login')}
           </Button>
-          <Stack direction="row" justify="space-between">
-            <Link href="/account/forgot-password/">
+          <Stack direction="row" alignment="space-between">
+            <Link href="/account/forgot-password/" variant="underline">
               <Text size="small">{t('forgot-password')}</Text>
             </Link>
-            <Link href="/account/register/">
+            <Link href="/account/register/" variant="underline">
               <Text size="small">{t('register')}</Text>
             </Link>
           </Stack>
